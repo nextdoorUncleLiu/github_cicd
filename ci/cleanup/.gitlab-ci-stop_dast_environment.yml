@@ -1,0 +1,2 @@
+cleanup:
+  script: echo "stop_dast_environment"

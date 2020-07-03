@@ -1,0 +1,2 @@
+browserPerformance:
+  script: echo "browserPerformance"
