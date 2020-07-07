@@ -7,7 +7,7 @@ stages:
   - cleanup
 
 include:
-  - 'ci/build/.gitlab-ci-build.yml'
+  - 'ci/build/.gitlab-ci-build.yml' 
   # - 'ci/test/.gitlab-ci-test.yml'
   # - 'ci/test/.gitlab-ci-code_quality.yml'
   # - 'ci/test/.gitlab-ci-container_scanning.yml'
