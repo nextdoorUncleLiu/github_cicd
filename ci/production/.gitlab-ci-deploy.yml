@@ -1,6 +1,6 @@
 .deploy:
   script: echo "deploy"
-    environment:
-      name: production
-    only:
+  environment:
+    name: production
+  only:
     - master
