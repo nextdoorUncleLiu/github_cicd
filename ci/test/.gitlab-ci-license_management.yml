@@ -1,2 +1,1 @@
-test:
-  script: echo "license_management"
+script: echo "license_management"

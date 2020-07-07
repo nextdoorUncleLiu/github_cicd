@@ -1,2 +1,1 @@
-test:
-  script: echo "code_quality"
+script: echo "code_quality"
