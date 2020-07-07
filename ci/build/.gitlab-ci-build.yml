@@ -1,7 +1,2 @@
-stages:
-  - build
-
-jobs:
-  stage: build
-  build:
+build:
     script: echo "build"

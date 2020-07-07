@@ -13,10 +13,9 @@ include:
   # - 'ci/test/.gitlab-ci-container_scanning.yml'
   # - 'ci/test/.gitlab-ci-license_management.yml'
   # - 'ci/production/.gitlab-ci-deploy.yml'
-# jobs:
-#   stage: build
-#   extends:
-#     - 'ci/build/.gitlab-ci-build.yml'
+jobs:
+  stage: build
+  extends: .build
 # jobs1:
 #   stage: test
 #   extends:
