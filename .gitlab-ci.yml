@@ -1,3 +1,11 @@
+include:
+  - 'ci/build/.gitlab-ci-build.yml' 
+  - 'ci/test/.gitlab-ci-test.yml'
+  - 'ci/test/.gitlab-ci-code_quality.yml'
+  - 'ci/test/.gitlab-ci-container_scanning.yml'
+  - 'ci/test/.gitlab-ci-license_management.yml'
+  - 'ci/production/.gitlab-ci-deploy.yml'
+
 stages:
   - build
   - test
@@ -6,29 +14,20 @@ stages:
   - performance
   - cleanup
 
-include:
-  - 'ci/build/.gitlab-ci-build.yml' 
-  # - 'ci/test/.gitlab-ci-test.yml'
-  # - 'ci/test/.gitlab-ci-code_quality.yml'
-  # - 'ci/test/.gitlab-ci-container_scanning.yml'
-  # - 'ci/test/.gitlab-ci-license_management.yml'
-  # - 'ci/production/.gitlab-ci-deploy.yml'
 jobs:
   stage: build
   extends: .build
-# jobs1:
-#   stage: test
-#   extends:
-#     - 'ci/test/.gitlab-ci-test.yml'
-#   extends:
-#     - 'ci/test/.gitlab-ci-code_quality.yml'
-# jobstest1:
-#   stage: test
-#   extends:
-#     - 'ci/test/.gitlab-ci-container_scanning.yml'
-#   extends:
-#     - 'ci/test/.gitlab-ci-license_management.yml'
-# jobs2:
-#   stage: production
-#   extends:
-#     - 'ci/production/.gitlab-ci-deploy.yml'
+jobs1:
+  stage: test
+  extends:
+    - .test
+    - .code_quality
+jobstest1:
+  stage: test
+  extends:
+    - .container_scanning
+    - .license_management
+jobs2:
+  stage: production
+  extends:
+    - .deploy

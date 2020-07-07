@@ -1,1 +1,2 @@
-script: echo "container_scanning"
+.container_scanning:
+  script: echo "container_scanning"

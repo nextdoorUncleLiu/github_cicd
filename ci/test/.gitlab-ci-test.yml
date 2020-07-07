@@ -1,1 +1,2 @@
-script: echo "test"
+.test:
+  cript: echo "test"

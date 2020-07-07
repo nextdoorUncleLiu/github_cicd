@@ -1,1 +1,2 @@
-script: echo "license_management"
+.license_management:
+  script: echo "license_management"

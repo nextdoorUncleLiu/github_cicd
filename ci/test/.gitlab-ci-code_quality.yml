@@ -1,1 +1,2 @@
-script: echo "code_quality"
+.code_quality:
+  script: echo "code_quality"
