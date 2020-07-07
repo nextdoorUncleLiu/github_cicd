@@ -9,21 +9,21 @@ jobs:
   stage: build
   trigger:
     include:
-      - file: '/ci/build/.gitlab-ci-build.yml'
+      - template: 'ci/build/.gitlab-ci-build.yml'
 jobs1:
   stage: test
   trigger:
     include:
-      - file: '/ci/test/.gitlab-ci-test.yml'
-      - file: '/ci/test/.gitlab-ci-code_quality.yml'
+      - template: 'ci/test/.gitlab-ci-test.yml'
+      - template: 'ci/test/.gitlab-ci-code_quality.yml'
 jobstest1:
   stage: test
   trigger:
     include:
-      - file: '/ci/test/.gitlab-ci-container_scanning.yml'
-      - file: '/ci/test/.gitlab-ci-license_management.yml'
+      - template: 'ci/test/.gitlab-ci-container_scanning.yml'
+      - template: 'ci/test/.gitlab-ci-license_management.yml'
 jobs2:
   stage: production
   trigger:
     include:
-      file: '/ci/production/.gitlab-ci-deploy.yml'
+      template: 'ci/production/.gitlab-ci-deploy.yml'

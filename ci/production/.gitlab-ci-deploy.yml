@@ -1,5 +1,4 @@
-production:
-  script: echo "deploy"
+script: echo "deploy"
   environment:
     name: production
   only:
