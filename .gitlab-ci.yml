@@ -5,25 +5,31 @@ stages:
   - production
   - performance
   - cleanup
-jobs:
-  stage: build
-  trigger:
-    include:
-      - file: '/ci/build/.gitlab-ci-build.yml'
-jobs1:
-  stage: test
-  trigger:
-    include:
-      - file: '/ci/test/.gitlab-ci-test.yml'
-      - file: '/ci/test/.gitlab-ci-code_quality.yml'
-jobstest1:
-  stage: test
-  trigger:
-    include:
-      - file: '/ci/test/.gitlab-ci-container_scanning.yml'
-      - file: '/ci/test/.gitlab-ci-license_management.yml'
-jobs2:
-  stage: production
-  trigger:
-    include:
-      file: '/ci/production/.gitlab-ci-deploy.yml'
+
+include:
+  - 'ci/build/.gitlab-ci-build.yml'
+  # - 'ci/test/.gitlab-ci-test.yml'
+  # - 'ci/test/.gitlab-ci-code_quality.yml'
+  # - 'ci/test/.gitlab-ci-container_scanning.yml'
+  # - 'ci/test/.gitlab-ci-license_management.yml'
+  # - 'ci/production/.gitlab-ci-deploy.yml'
+# jobs:
+#   stage: build
+#   extends:
+#     - 'ci/build/.gitlab-ci-build.yml'
+# jobs1:
+#   stage: test
+#   extends:
+#     - 'ci/test/.gitlab-ci-test.yml'
+#   extends:
+#     - 'ci/test/.gitlab-ci-code_quality.yml'
+# jobstest1:
+#   stage: test
+#   extends:
+#     - 'ci/test/.gitlab-ci-container_scanning.yml'
+#   extends:
+#     - 'ci/test/.gitlab-ci-license_management.yml'
+# jobs2:
+#   stage: production
+#   extends:
+#     - 'ci/production/.gitlab-ci-deploy.yml'
