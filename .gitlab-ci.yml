@@ -21,12 +21,12 @@ jobs1:
   stage: test
   extends:
     - .test
-    - .code_quality
 jobstest1:
   stage: test
   extends:
     - .container_scanning
     - .license_management
+    - .code_quality
 jobs2:
   stage: production
   extends:
