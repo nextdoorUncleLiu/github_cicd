@@ -17,16 +17,19 @@ stages:
 jobs:
   stage: build
   extends: .build
+  needs: []
 jobs1:
   stage: test
   extends:
     - .test
+    - .code_quality
+  needs: ['jobs']
 jobstest1:
   stage: test
   extends:
     - .container_scanning
     - .license_management
-    - .code_quality
+  needs: ['jobs']
 jobs2:
   stage: production
   extends:
